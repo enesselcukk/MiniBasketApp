@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MiniBasketApp</string>
+    <string name="image_product">image_product</string>
+    <string name="add_basket">Add basket</string>
 </resources>
