@@ -1,9 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="setData"
+            type="com.enesselcuk.minibasketapp.remote.model.BasketResponseItem" />
+    </data>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/image_product"
+            android:src="@drawable/ic_launcher_background"
+            app:imageView="@{setData.image}" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="10dp"
+            android:text="@{setData.name}"
+            tools:text="Şampuan" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name"
+            android:layout_marginVertical="10dp"
+            android:text="@{setData.price +` `+setData.currency}"
+            tools:text="13.99 TRY" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_basket"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/text_price"
+            android:backgroundTint="@color/red"
+            android:text="@string/add_basket"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 </layout>
