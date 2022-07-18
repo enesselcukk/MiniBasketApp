@@ -1,9 +1,10 @@
 package com.enesselcuk.minibasketapp.ui.home
 
 import com.enesselcuk.minibasketapp.remote.model.BasketResponse
+import com.enesselcuk.minibasketapp.remote.model.BasketResponseItem
 
 data class HomeUiState(
-    val isLoading: Boolean? = false,
+    val loading: Boolean? = false,
     val error: String? = null,
-    val stores: List<BasketResponse> = emptyList(),
+    val basket: BasketResponse? = null,
 )
