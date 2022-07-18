@@ -16,14 +16,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    override fun getDataBinding() = FragmentHomeBinding.inflate(layoutInflater)
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var basketAdapter: BasketAdapter
 
     override fun definition() {
         basketAdapter = BasketAdapter()
-        binding?.recyclerView?.apply {
+        binding.recyclerView.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = basketAdapter
         }
@@ -44,9 +43,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun homeUiStatus(homeUiState: HomeUiState) {
         homeUiState.loading?.let {
-            binding?.progresBar?.isVisible = it
+            binding.progresBar.isVisible = it
         }
-        // homeUiState.onComplete.let { binding?.status = it }
         homeUiState.error?.let {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         }

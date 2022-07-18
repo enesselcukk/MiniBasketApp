@@ -5,25 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
 
-abstract class BaseFragment<dBinding : ViewDataBinding> : Fragment() {
+abstract class BaseFragment<VB : ViewDataBinding>(
+    private val inflateLayout: (LayoutInflater) -> VB
+) : Fragment() {
 
-    private var _binding: dBinding? = null
-    val binding get() = _binding
-
-
-    abstract fun getDataBinding(): dBinding
+    protected lateinit var binding: VB
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        _binding = getDataBinding()
-        return binding?.root
+        binding = inflateLayout(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,14 +43,4 @@ abstract class BaseFragment<dBinding : ViewDataBinding> : Fragment() {
     open fun setData() {}
     open fun setClick() {}
 
-//    protected abstract val progressBar : View
-//
-//    protected fun setProgressStatus(isLoading: Boolean) {
-//        progressBar.isVisible = isLoading
-//    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
