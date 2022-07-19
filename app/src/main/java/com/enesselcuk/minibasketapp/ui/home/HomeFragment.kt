@@ -12,19 +12,24 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.enesselcuk.minibasketapp.base.BaseFragment
 import com.enesselcuk.minibasketapp.databinding.FragmentHomeBinding
+import com.enesselcuk.minibasketapp.domain.mapper.basketLocalMap
 import com.enesselcuk.minibasketapp.ui.home.adapter.BasketAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var basketAdapter: BasketAdapter
 
+
     override fun definition() {
         basketAdapter = BasketAdapter(BasketAdapter.ClickToBasket {
-            val action = HomeFragmentDirections.actionHomeFragmentToBasketFragment()
-            findNavController().navigate(action)
+            lifecycleScope.launch(Dispatchers.Main) {
+                viewModel.saveToCart(basketLocalMap(it))
+                val action = HomeFragmentDirections.actionHomeFragmentToBasketFragment()
+                findNavController().navigate(action)
+            }
         })
         binding.recyclerView.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
@@ -56,5 +61,4 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             basketAdapter.submitList(it)
         }
     }
-
 }

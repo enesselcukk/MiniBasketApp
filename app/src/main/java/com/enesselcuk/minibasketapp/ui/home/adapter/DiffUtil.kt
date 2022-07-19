@@ -1,7 +1,7 @@
 package com.enesselcuk.minibasketapp.ui.home.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.enesselcuk.minibasketapp.remote.model.BasketResponseItem
+import com.enesselcuk.minibasketapp.source.remote.model.BasketResponseItem
 
 object DiffUtil : DiffUtil.ItemCallback<BasketResponseItem>() {
     override fun areItemsTheSame(oldItem: BasketResponseItem, newItem: BasketResponseItem): Boolean =

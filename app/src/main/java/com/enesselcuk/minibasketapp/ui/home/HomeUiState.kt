@@ -1,7 +1,6 @@
 package com.enesselcuk.minibasketapp.ui.home
 
-import com.enesselcuk.minibasketapp.remote.model.BasketResponse
-import com.enesselcuk.minibasketapp.remote.model.BasketResponseItem
+import com.enesselcuk.minibasketapp.source.remote.model.BasketResponse
 
 data class HomeUiState(
     val loading: Boolean? = false,

@@ -1,4 +1,4 @@
-package com.enesselcuk.minibasketapp.remote.model
+package com.enesselcuk.minibasketapp.source.remote.model
 
 data class BasketResponseItem(
     val currency: String? = null,

@@ -3,7 +3,7 @@ package com.enesselcuk.minibasketapp.di
 
 
 import com.enesselcuk.minibasketapp.BuildConfig.BASE_URL
-import com.enesselcuk.minibasketapp.remote.service.BasketService
+import com.enesselcuk.minibasketapp.source.remote.service.BasketService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

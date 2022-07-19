@@ -4,10 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.enesselcuk.minibasketapp.remote.model.BasketResponseItem
-import com.enesselcuk.minibasketapp.ui.home.adapter.BasketAdapter
 
 
 @BindingAdapter("app:imageView")

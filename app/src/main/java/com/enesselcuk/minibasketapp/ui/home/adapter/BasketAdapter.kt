@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.enesselcuk.minibasketapp.R
-import com.enesselcuk.minibasketapp.remote.model.BasketResponseItem
+import com.enesselcuk.minibasketapp.source.remote.model.BasketResponseItem
 
 class BasketAdapter(private val click: ClickToBasket) :
     ListAdapter<BasketResponseItem, BasketVHolder>(DiffUtil) {

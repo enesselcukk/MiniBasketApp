@@ -1,6 +1,6 @@
-package com.enesselcuk.minibasketapp.remote.service
+package com.enesselcuk.minibasketapp.source.remote.service
 
-import com.enesselcuk.minibasketapp.remote.model.BasketResponse
+import com.enesselcuk.minibasketapp.source.remote.model.BasketResponse
 import retrofit2.http.GET
 
 
@@ -8,6 +8,7 @@ import retrofit2.http.GET
 interface BasketService {
     @GET("listing")
     suspend fun getStories(): BasketResponse
+
 
 
 

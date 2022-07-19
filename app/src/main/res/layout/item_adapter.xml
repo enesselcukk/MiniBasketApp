@@ -7,7 +7,7 @@
 
         <variable
             name="setData"
-            type="com.enesselcuk.minibasketapp.remote.model.BasketResponseItem" />
+            type="com.enesselcuk.minibasketapp.source.remote.model.BasketResponseItem" />
 
         <variable
             name="click"

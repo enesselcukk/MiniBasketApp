@@ -3,6 +3,8 @@ package com.enesselcuk.minibasketapp.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.enesselcuk.minibasketapp.domain.repository.BasketRepos
+import com.enesselcuk.minibasketapp.source.local.BasketDao
+import com.enesselcuk.minibasketapp.source.local.BasketEntity
 import com.enesselcuk.minibasketapp.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
@@ -11,7 +13,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repos: BasketRepos) : ViewModel() {
+class HomeViewModel @Inject constructor(
+    private val repos: BasketRepos,
+    private val dao: BasketDao
+) :
+    ViewModel() {
 
 
     private val _uiState = MutableStateFlow<HomeUiState>(HomeUiState(loading = false))
@@ -45,6 +51,12 @@ class HomeViewModel @Inject constructor(private val repos: BasketRepos) : ViewMo
                         }
                     }
                 }
+        }
+    }
+
+    fun saveToCart(basketEntity: BasketEntity) {
+        viewModelScope.launch {
+            dao.insertProduceFavorite(basketEntity)
         }
     }
 }
