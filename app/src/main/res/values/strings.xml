@@ -3,4 +3,8 @@
     <string name="image_product">image_product</string>
     <string name="add_basket">Add basket</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_basket">image_basket</string>
+    <string name="image_basket_reduce">image basket reduce</string>
+    <string name="image_basket_plus">image basket plus</string>
+    <string name="remove">REMOVE</string>
 </resources>
