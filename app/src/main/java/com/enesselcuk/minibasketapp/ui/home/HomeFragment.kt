@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.enesselcuk.minibasketapp.base.BaseFragment
 import com.enesselcuk.minibasketapp.databinding.FragmentHomeBinding
@@ -21,7 +22,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private lateinit var basketAdapter: BasketAdapter
 
     override fun definition() {
-        basketAdapter = BasketAdapter()
+        basketAdapter = BasketAdapter(BasketAdapter.ClickToBasket {
+            val action = HomeFragmentDirections.actionHomeFragmentToBasketFragment()
+            findNavController().navigate(action)
+        })
         binding.recyclerView.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = basketAdapter

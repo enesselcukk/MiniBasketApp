@@ -6,7 +6,11 @@ import com.enesselcuk.minibasketapp.remote.model.BasketResponseItem
 
 class BasketVHolder(private val binding: ItemAdapterBinding) :
     RecyclerView.ViewHolder(binding.root) {
-    fun bind(basket: BasketResponseItem) {
+    fun bind(
+        basket: BasketResponseItem,
+        basketClick: BasketAdapter.ClickToBasket
+    ) {
         binding.setData = basket
+        binding.click = basketClick
     }
 }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_launcher_background"
+            android:contentDescription="@string/image_basket" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_toEndOf="@id/imageview"
+            tools:text="Şampuan" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name"
+            android:layout_marginVertical="10dp"
+            android:layout_toEndOf="@id/imageview"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="19.00 YTL" />
+
+
+        <ImageView
+            android:id="@+id/image_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_circle"
+            android:elevation="8dp"
+            android:src="@drawable/ic_baseline_remove"
+            android:contentDescription="@string/image_basket_reduce" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_product_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/image_remove"
+            android:background="@drawable/line_basket"
+            android:minWidth="50dp"
+            android:minHeight="20dp"
+            tools:text="5"
+            android:textAlignment="center" />
+
+
+        <ImageView
+            android:id="@+id/image_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_marginHorizontal="10dp"
+            android:layout_toEndOf="@id/tv_product_count"
+            android:background="@drawable/bg_circle"
+            android:elevation="8dp"
+            android:src="@drawable/ic_baseline_add"
+            android:contentDescription="@string/image_basket_plus" />
+
+
+        <TextView
+            android:id="@+id/text_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/image_plus"
+            android:gravity="center_horizontal"
+            android:text="@string/remove" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/text_delete"
+            android:layout_marginVertical="20dp"
+            android:background="@color/silver" />
+
+    </RelativeLayout>
+</layout>

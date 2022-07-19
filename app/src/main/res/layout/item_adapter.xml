@@ -8,6 +8,10 @@
         <variable
             name="setData"
             type="com.enesselcuk.minibasketapp.remote.model.BasketResponseItem" />
+
+        <variable
+            name="click"
+            type="com.enesselcuk.minibasketapp.ui.home.adapter.BasketAdapter.ClickToBasket" />
     </data>
 
     <RelativeLayout
@@ -54,6 +58,7 @@
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@id/text_price"
             android:backgroundTint="@color/red"
+            android:onClick="@{() -> click.clickBtn(setData)}"
             android:text="@string/add_basket"
             android:textColor="@color/white" />
 

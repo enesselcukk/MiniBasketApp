@@ -7,4 +7,5 @@ import com.enesselcuk.minibasketapp.databinding.FragmentBasketBinding
 
 class BasketFragment : BaseFragment<FragmentBasketBinding>(FragmentBasketBinding::inflate) {
 
+
 }
