@@ -8,7 +8,7 @@ import com.enesselcuk.minibasketapp.R
 import com.enesselcuk.minibasketapp.source.remote.model.BasketResponseItem
 
 class BasketAdapter(private val click: ClickToBasket) :
-    ListAdapter<BasketResponseItem, BasketVHolder>(DiffUtil) {
+    ListAdapter<BasketResponseItem, BasketVHolder>(BasketDiffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketVHolder =
         BasketVHolder(
             DataBindingUtil.inflate(
