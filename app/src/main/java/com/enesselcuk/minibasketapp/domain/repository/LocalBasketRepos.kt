@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface LocalBasketRepos {
     suspend fun getSavedBag(): Flow<NetworkResult<List<BasketEntity>>>
+    suspend fun deleteBag(entity: BasketEntity)
 }

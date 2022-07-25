@@ -60,7 +60,8 @@
             android:backgroundTint="@color/red"
             android:onClick="@{() -> click.clickBtn(setData)}"
             android:text="@string/add_basket"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="11sp" />
 
     </RelativeLayout>
 </layout>

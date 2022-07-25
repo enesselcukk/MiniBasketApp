@@ -7,4 +7,8 @@
     <string name="image_basket_reduce">image basket reduce</string>
     <string name="image_basket_plus">image basket plus</string>
     <string name="remove">REMOVE</string>
+
+    <string name="cart">MY CART (%s)</string>
+    <string name="continue_shopping"><![CDATA[< CONTINUE SHOPPING]]></string>
+    <string name="place_order">place order</string>
 </resources>

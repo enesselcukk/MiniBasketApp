@@ -3,6 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="localSize"
+            type="Integer" />
+    </data>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="MY Cart (3)" />
+            android:text="@{@string/cart(localSize.toString())}"
+            tools:text="MY CART (3)" />
 
         <View
             android:id="@+id/view"
@@ -31,8 +39,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/view"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="100dp"
             tools:listitem="@layout/item_basket" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_continue"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/milk"
+            android:text="@string/continue_shopping"
+            android:textColor="@color/boltgun_metal"
+            android:textSize="11sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_place_order"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@id/btn_continue"
+            android:backgroundTint="#ff8f00"
+            android:gravity="center"
+            android:text="@string/place_order"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 </layout>

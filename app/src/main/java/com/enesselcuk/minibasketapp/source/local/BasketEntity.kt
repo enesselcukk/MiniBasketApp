@@ -21,4 +21,7 @@ data class BasketEntity(
 
     @ColumnInfo(name = "price")
     val price: String? = null,
+
+    @ColumnInfo(name = "salePrice")
+    var salePrice:Double? = null,
 )
